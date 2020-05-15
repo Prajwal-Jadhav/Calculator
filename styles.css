@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+:root {
+  --background: #353851;
+  --calc-body: #2b2d41;
+  --gray-text: #535780;
+  --white-text: #fbfbfb;
+  --display-text: #fffefe;
+  --bottom-display: #ff3875;
+  --upper-display: #fc3a49;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  padding: 50px 0 10px;
+}
+
+.calculator {
+  display: grid;
+  background-color: var(--calc-body);
+  width: 420px;
+  grid-template-areas:
+    "d d d d"
+    "d d d d"
+    "n n n o"
+    "n n n o"
+    "n n n o"
+    "n n n o"
+    "n n n o";
+}
+
+.display {
+  grid-area: d;
+  background-image: linear-gradient(
+    45deg,
+    var(--bottom-display) 0%,
+    var(--upper-display) 100%
+  );
+  overflow: hidden;
+  color: var(--display-text);
+  font-size: 40px;
+  text-align: center;
+  padding-top: 65px;
+}
+
+.numberpad {
+  grid-area: n;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.button__num {
+  background-color: var(--calc-body);
+  border: 0;
+  color: var(--bottom-display);
+  font-size: 22px;
+}
+
+.operators {
+  grid-area: o;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.button--bright {
+  background-color: var(--calc-body);
+  border: 0;
+  color: var(--white-text);
+  font-size: 22px;
+}
+
+#c,
+#ac {
+  background-color: var(--calc-body);
+  border: 0;
+  font-size: 22px;
+  color: var(--gray-text);
+}
